@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+.outline-text {
+    color: transparent;
+    -webkit-text-stroke: 0.6px white; /* Adjust the color and width as needed */
+    text-stroke: 1px white; /* For non-WebKit browsers */
+  }
