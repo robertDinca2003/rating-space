@@ -4,12 +4,7 @@ const cors = require("cors")
 const { Server } = require('socket.io')
 const app = express()
 
-app.use(cors({
-    origin: "https://rating-space.vercel.app",
-    methods:["GET","POST"],
-    allowedHeaders: ['Content-Type'],
-    credentials: true,
-}))
+app.use(cors())
 
 const server = http.createServer(app)
 
