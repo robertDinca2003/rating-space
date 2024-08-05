@@ -12,7 +12,7 @@ import VoteView from './pages/VoterView';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import { getUsername } from './utils/user';
 
-const socket = io.connect("http://localhost:3001");
+const socket = io.connect("https://rating-space.vercel.app/");
 
 export const InfoRoomContext = createContext();
 
