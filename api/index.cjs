@@ -4,7 +4,12 @@ const cors = require("cors")
 const { Server } = require('socket.io')
 const app = express()
 
-app.use(cors())
+app.use(cors({
+    origin: "https://rating-space.vercel.app",
+    methods:["GET","POST"],
+    allowedHeaders: ['Content-Type'],
+    credentials: true,
+}))
 
 const server = http.createServer(app)
 
@@ -12,8 +17,10 @@ const lobbies = {};
 
 const io = new Server(server,{
     cors: {
-        origin: "https://rating-space.vercel.app/",
+        origin: "https://rating-space.vercel.app",
         methods:["GET","POST"],
+        allowedHeaders: ['Content-Type'],
+        credentials: true,
     }
 });
 
