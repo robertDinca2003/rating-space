@@ -90,12 +90,12 @@ const HostView = () => {
 
     return (
         <div className="h-screen bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-gray-700 via-gray-900 to-black  flex flex-col justify-evenly items-center">
-            <div className="text-white text-5xl flex justify-between w-[80%]">
+            <div className="text-white text-xl xxsm:text-2xl xsm:text-3xl sm:text-5xl flex flex-col items-center lg:flex-row justify-between w-[80%]">
                 <h1 className=" outline-text text-transparent">Host Settings</h1>
                 <h1 className=" outline-text text-transparent">Room Id:  <span className="text-white">{lobbyInfo.id}</span></h1>
             </div>
             
-            <div className="text-white border-2 border-white p-4 rounded-2xl text-lg flex flex-col gap-4">
+            <div className="text-white border-2 border-white p-1 w-[90%] xsm:w-auto  xsm:p-4 rounded-2xl text-lg flex flex-col gap-4">
                 <div>
                     <legend>Maximum Voters: </legend>
                     <input onChange={(e)=>{setLobbyInfo({...lobbyInfo,maximum:e.target.value})}} type="number" placeholder="Insert a number" className="w-[100%] bg-transparent border-2 border-white rounded-lg p-1 text-white"/>
@@ -104,10 +104,12 @@ const HostView = () => {
                     <legend>Rounds: </legend>
                     <input onChange={(e)=>{setLobbyInfo({...lobbyInfo,rounds:e.target.value})}} type="number" placeholder="Insert a number" className="w-[100%] bg-transparent border-2 border-white rounded-lg p-1 text-white"/>
                 </div>
-                <div>
+                <div className="flex flex-col ">
                     <legend>Participat Name:</legend>
-                    <input value={particpant} onChange={(e)=>{setParticipant(e.target.value)}} placeholder="Insert a name" className="bg-transparent border-2 border-white rounded-l-lg p-1 text-white"/>
-                    <button onClick={AddParticipant} className="bg-transparent border-2 border-white rounded-r-lg p-1 hover:bg-white hover:text-slate-900 transition-colors duration-200 text-white">Add</button>
+                    <div className="flex flex-row w-[100%]">
+                        <input value={particpant} onChange={(e)=>{setParticipant(e.target.value)}} placeholder="Insert a name" className="w-[80%] bg-transparent border-2 border-white rounded-l-lg p-1 text-white"/>
+                        <button onClick={AddParticipant} className="w-[20%] bg-transparent border-2 border-white rounded-r-lg p-1 hover:bg-white hover:text-slate-900 transition-colors duration-200 text-white">Add</button>
+                    </div>
                 </div>
                 
 

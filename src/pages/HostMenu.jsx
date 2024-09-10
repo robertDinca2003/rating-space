@@ -146,13 +146,13 @@ const HostMenu = () => {
     return (
         <div className="text-white min-h-screen bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-gray-700 via-gray-900 to-black  flex flex-col gap-10 py-32 items-center">
             <div className="flex flex-col justify-center items-center gap-2">
-                { lobbyInfo.rounds >= currentRound ? <h1 className="text-7xl outline-text">Round {currentRound}</h1> : <h1 className="text-7xl outline-text">Final Results</h1>}
+                { lobbyInfo.rounds >= currentRound ? <h1 className="text-3xl xxsm:text-5xl xsm:text-6xl md:text-7xl outline-text">Round {currentRound}</h1> : <h1 className="text-7xl outline-text">Final Results</h1>}
                 <h3 className="text-2xl">Room: {lobbyInfo.id}</h3>
             </div>
             {lobbyInfo.rounds >= currentRound &&
             <div className="w-[100%] flex flex-col justify-center items-center gap-4 ">
-            <h2 className="text-3xl">List of Participants</h2>
-            <div className="border-4 border-white rounded-xl drop-shadow-lg p-4 flex flex-col gap-2 min-w-[50%] ">
+            <h2 className="text-xl xxsm:text-2xl xsm:text-3xl">List of Participants</h2>
+            <div className="border-4 border-white rounded-xl drop-shadow-lg p-4 flex flex-col gap-2 min-w-[95%] xxsm:min-w-[90%] xsm:min-w-[80%] sm:min-w-[50%] ">
                 {lobbyInfo.participants.map((participant,key)=>{
                     // console.log((hasBeenSelected.find((elem)=>{return elem == participant}) == -1))
                     return (
@@ -165,7 +165,7 @@ const HostMenu = () => {
             </div>
             </div>}
             {lobbyInfo.rounds >= currentRound &&
-            <h2 className="text-2xl ">{selectedParticipant} is selected</h2>}
+            <h2 className="text-xl xxsm:text-2xl ">{selectedParticipant} is selected</h2>}
             {lobbyInfo.rounds >= currentRound && <div className="flex flex-col gap-5 ">
                {!isVoting && <button className="bg-white border-2  rounded-xl text-slate-800 hover:bg-transparent hover:text-white transition-colors duration-200 p-2 text-xl" onClick={()=>{StartVote()}}>Start Vote</button>}
                {isVoting && <button className="bg-white border-2  rounded-xl text-slate-800 hover:bg-transparent hover:text-white transition-colors duration-200 p-2 text-xl" onClick={()=>{StopVote()}}>Stop Vote</button>}
@@ -218,7 +218,7 @@ const HostMenu = () => {
                         )
                     })
                 }
-                <h2 className="text-2xl">Final Results</h2>
+                <h2 className="text-xl xxsm:text-2xl">Final Results</h2>
                 <table className="border-2 border-white">
                     <thead className="border-2 border-white">
                         <tr className="border-2 border-white">

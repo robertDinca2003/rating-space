@@ -17,8 +17,6 @@ const socket = io.connect("https://rating-app-backend-44c81ef26090.herokuapp.com
 export const InfoRoomContext = createContext();
 
 function App() {
-  const [message, setMessage] = useState("")
-  const [messageReceived, setMessageReceived] = useState("");
 
   const [roomId, setRoomId] = useState(localStorage.getItem('roomId')?localStorage.getItem('roomId'):'0')
   const [nickname, setNickname] = useState("one")
@@ -93,12 +91,7 @@ function App() {
   
   return (
     <>
-      <input placeholder='Message...' onChange={(event)=>{
-        setMessage(event.target.value);
-      }}/>
-      <button onClick={sendMessage}>Send Message</button>
-      <h1>Message:</h1>
-      {messageReceived}
+      
       <Router>
       <InfoRoomContext.Provider value={[results,roomId, setRoomId, nickname, setNickname, lobbyInfo,setLobbyInfo, socket, question,round,participant, isVoting,setIsVoting]}>
 
@@ -108,8 +101,7 @@ function App() {
             <Route path='/hostroom' element={<HostMenu/>}/>
             <Route path='/voteroom' element={<VoteView/>}/>
           </Routes>
-          <h1>{roomId}</h1>
-          <h1>{nickname}</h1>
+          
       </InfoRoomContext.Provider>
 
       </Router>
